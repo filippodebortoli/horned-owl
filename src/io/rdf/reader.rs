@@ -1873,7 +1873,7 @@ impl<'a, A: ForIRI, AA: ForIndex<A>, O: RDFOntology<A, AA>> OntologyParser<'a, A
                     if parse_all
                         || <O as AsRef<DeclarationMappedIndex<A, AA>>>::as_ref(&self.o)
                             .is_annotation_property(ap)
-                        || is_annotation_builtin(ap.as_ref()) =>
+                        || is_annotation_builtin(ap) =>
                 {
                     firi(self, &triple.0, iri)
                 }
