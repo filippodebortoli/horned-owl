@@ -241,6 +241,10 @@ impl<A: ForIRI, AA: ForIndex<A>> SetIndex<A, AA> {
     pub fn the_ontology_id_or_default(&self) -> OntologyID<A> {
         self.the_ontology_id().unwrap_or_default()
     }
+
+    pub fn iter(&self) -> impl Iterator<Item = &AA> + '_ {
+        self.0.iter()
+    }
 }
 
 impl SetIndex<RcStr, Rc<AnnotatedComponent<RcStr>>> {
